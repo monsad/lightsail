@@ -5,7 +5,7 @@ on:
       - main
 env:
   AWS_REGION: "eu-central-1"
-  AWS_LIGHTSAIL_SERVICE_NAME: app-test
+  AWS_LIGHTSAIL_SERVICE_NAME: "app-test"
 jobs:
   deploy:
     name: Build and deploy
@@ -30,9 +30,9 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v1
         with:
           role-to-assume: arn:aws:iam::349767822519:user/msadlok
-          aws-region: ${{ secrets.AWS_REGION }}
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: "eu-central-1"
+          aws-access-key-id: "AKIAVC36JNS35OB4CUFL"
+          aws-secret-access-key: "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"
       - name: Build Docker Image
         run: docker build -t ${{ secrets.AWS_LIGHTSAIL_SERVICE_NAME }}:release .
       - name: Push and Deploy
