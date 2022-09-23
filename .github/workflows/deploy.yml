@@ -27,7 +27,7 @@ jobs:
           sudo mv "lightsailctl" "/usr/local/bin/lightsailctl"
           sudo chmod +x /usr/local/bin/lightsailctl
       - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@b8c74de
+        uses: aws-actions/configure-aws-credentials@master
         with:
           role-to-assume: arn:aws:iam::349767822519:user/msadlok
           aws-region: eu-central-1
