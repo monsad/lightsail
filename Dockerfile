@@ -1,8 +1,8 @@
 FROM node:14-alpine AS builder
-WORKDIR /
+WORKDIR /work
 
-ADD package.json /
-ADD package-lock.json /
+ADD lightsail/package.json /work/lightsail
+ADD lightsail/package-lock.json /work/lightsail
 ADD src /work/src
 
 RUN cd /work && npm ci
