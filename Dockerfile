@@ -1,8 +1,8 @@
 FROM node:14-alpine AS builder
-WORKDIR /work
+WORKDIR /
 
-ADD package.json /work/
-ADD package-lock.json /work/
+ADD package.json /
+ADD package-lock.json /
 ADD src /work/src
 
 RUN cd /work && npm ci
